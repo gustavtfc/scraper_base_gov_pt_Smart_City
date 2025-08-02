@@ -20,7 +20,7 @@ Follow these steps to set up and run the project.
 
 ### **2\. Installation**
 
-First, clone the repository and create a virtual environment: git clone \[https://github.com/gustavtfc/Scraping-exercise-base-gov-pt.git\](https://github.com/gustavtfc/Scraping-exercise-base-gov-pt.git)  
+First, clone the repository and create a virtual environment: git clone \[https://github.com/gustavtfc/Scraping-exercise-base-gov-pt.git\]
 cd Scraping-exercise-base-gov-pt  
 python3 \-m venv venv  
 source venv/bin/activate
