@@ -1,0 +1,15 @@
+# Virtual Environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Scraper Cache Files
+html_cache/
+
+# Logs and Output Files
+*.log
+*.csv
+*.xlsx
+*.txt

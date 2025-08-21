@@ -1,43 +1,43 @@
-# **Scraping Exercise \- Base.gov.pt Portal**
+# Web Scraper for the Base.gov.pt Portal
 
-This project contains scripts to extract and visualize public contract data from the base.gov.pt portal, as part of an internship exercise.
+This project contains an advanced Python script for extracting public contract data from the Base.gov.pt portal, focusing on robustness and efficiency through a 100% API-driven approach.
 
-## **Description**
+## Description
 
-The project consists of two main scripts:
+The scraper is designed to bypass the limitations of dynamic websites that load data via JavaScript. Instead of parsing HTML, it interacts directly with the portal's internal APIs to ensure complete and accurate data extraction.
 
-1. gov\_pt.py: A command-line script that scrapes data from the portal and saves it to a .csv file.  
-2. view\_data.py: A small web application built with Streamlit that loads the .csv file and displays the data in an interactive, searchable, and sortable table.
+### Features
+- **100% API-Driven:** Interacts directly with the portal's JSON endpoints, avoiding the complexities of HTML scraping and JavaScript execution.
+- **Two-Phase Extraction:** Utilizes a search API to quickly discover contract IDs and a detail API to retrieve comprehensive information for each one.
+- **Data Integrity Filter:** Validates the execution location of each contract to ensure the results match the desired districts, discarding inconsistent data.
+- **Resilient:** The code is built to handle inconsistencies in the API responses (such as lists vs. strings and different date formats).
+- **Clean Export:** Saves the final data into a formatted and easy-to-read `.csv` file.
 
-## **How to Run**
+## How to Run
 
 Follow these steps to set up and run the project.
 
-### **1\. Prerequisites**
+### 1. Prerequisites
+* Python 3.8+
+* Git
 
-* Python 3.8+  
-* A virtual environment (recommended)
+### 2. Installation
+First, clone the repository and create a virtual environment:
 
-### **2\. Installation**
-
-First, clone the repository and create a virtual environment: git clone [https://github.com/gustavtfc/Scraping-exercise-base-gov-pt]
-cd Scraping-exercise-base-gov-pt  
-python3 \-m venv venv  
+```bash
+git clone https://github.com/gustavtfc/scraper_base_gov_pt_Smart_City
+cd scraper_base_gov_pt_Smart_City
+python3 -m venv venv
 source venv/bin/activate
 
-Next, install the required dependencies:  
-pip install \-r requirements.txt
+###Next, install the required dependencies:
+pip install -r requirements.txt
 
-### **3\. Scrape the Data**
+###Execution
 
-Run the scraping script to generate the contracts\_data.csv file:
+###To start the scraper, simply run the main script. It will process all keywords and districts defined in the code.
 
-python3 gov\_pt.py \-o contracts\_data.csv
+python3 scraper.py
 
-### **4\. View the Data**
+###The output will be saved in the reporte_FINAL_FILTRADO.csv file.
 
-Run the Streamlit application to visualize the data. A new tab will open in your browser.
-
-streamlit run view\_data.py
-
-On the web page, simply upload the contracts\_data.csv file generated in the previous step.
