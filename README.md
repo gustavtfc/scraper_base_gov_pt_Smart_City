@@ -1,17 +1,18 @@
 # Web Scraper for the Base.gov.pt Portal
 
-This project contains an advanced Python script for extracting public contract data from the Base.gov.pt portal, focusing on robustness and efficiency through a 100% API-driven approach.
+This project contains an advanced Python script for extracting public contract data from the Base.gov.pt portal. It focuses on robustness and efficiency through a 100% API-driven methodology, ensuring high-quality, deduplicated data.
 
 ## Description
 
-The scraper is designed to bypass the limitations of dynamic websites that load data via JavaScript. Instead of parsing HTML, it interacts directly with the portal's internal APIs to ensure complete and accurate data extraction.
+The scraper was developed to bypass the limitations of dynamic websites that load data via JavaScript. Instead of parsing HTML, it interacts directly with the portal's internal JSON APIs to ensure complete, accurate, and fast data extraction.
 
 ### Features
-- **100% API-Driven:** Interacts directly with the portal's JSON endpoints, avoiding the complexities of HTML scraping and JavaScript execution.
-- **Two-Phase Extraction:** Utilizes a search API to quickly discover contract IDs and a detail API to retrieve comprehensive information for each one.
-- **Data Integrity Filter:** Validates the execution location of each contract to ensure the results match the desired districts, discarding inconsistent data.
-- **Resilient:** The code is built to handle inconsistencies in the API responses (such as lists vs. strings and different date formats).
-- **Clean Export:** Saves the final data into a formatted and easy-to-read `.csv` file.
+- **100% API-Driven:** Interacts directly with the portal's JSON endpoints, avoiding the complexities and fragility of HTML scraping.
+- **Two-Step API Strategy:** Uses a high-speed search API for mass discovery of contract IDs and a specific detail API to enrich each contract with complete information.
+- **Data Deduplication:** A core feature that ensures each contract is processed only once, regardless of how many keywords it matches, resulting in a clean and unique final dataset.
+- **Data Integrity Filter:** Validates the execution location of each contract against a target list of districts, discarding irrelevant results and ensuring data consistency.
+- **Respectful & Resilient:** Includes built-in delays between requests to avoid overloading the server, and handles potential network errors gracefully.
+- **Clean Export:** Saves the final, filtered, and deduplicated data into a formatted and easy-to-read `.csv` file.
 
 ## How to Run
 
